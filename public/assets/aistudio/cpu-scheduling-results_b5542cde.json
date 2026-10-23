@@ -1,0 +1,531 @@
+{
+  "bursts": [
+    17,
+    14,
+    19,
+    12,
+    3
+  ],
+  "quantum": 2,
+  "conditions": {
+    "arrivalTime": 0,
+    "cpuCount": 1,
+    "contextSwitchCost": 0
+  },
+  "results": [
+    {
+      "algorithm": "FCFS",
+      "quantum": null,
+      "rows": [
+        {
+          "process": "P1",
+          "at": 0,
+          "bt": 17,
+          "st": 0,
+          "ct": 17,
+          "tat": 17,
+          "wt": 0
+        },
+        {
+          "process": "P2",
+          "at": 0,
+          "bt": 14,
+          "st": 17,
+          "ct": 31,
+          "tat": 31,
+          "wt": 17
+        },
+        {
+          "process": "P3",
+          "at": 0,
+          "bt": 19,
+          "st": 31,
+          "ct": 50,
+          "tat": 50,
+          "wt": 31
+        },
+        {
+          "process": "P4",
+          "at": 0,
+          "bt": 12,
+          "st": 50,
+          "ct": 62,
+          "tat": 62,
+          "wt": 50
+        },
+        {
+          "process": "P5",
+          "at": 0,
+          "bt": 3,
+          "st": 62,
+          "ct": 65,
+          "tat": 65,
+          "wt": 62
+        }
+      ],
+      "timeline": [
+        {
+          "process": "P1",
+          "start": 0,
+          "end": 17,
+          "remaining": 0
+        },
+        {
+          "process": "P2",
+          "start": 17,
+          "end": 31,
+          "remaining": 0
+        },
+        {
+          "process": "P3",
+          "start": 31,
+          "end": 50,
+          "remaining": 0
+        },
+        {
+          "process": "P4",
+          "start": 50,
+          "end": 62,
+          "remaining": 0
+        },
+        {
+          "process": "P5",
+          "start": 62,
+          "end": 65,
+          "remaining": 0
+        }
+      ],
+      "totalTime": 65,
+      "avgWT": 32
+    },
+    {
+      "algorithm": "SJF",
+      "quantum": null,
+      "rows": [
+        {
+          "process": "P1",
+          "at": 0,
+          "bt": 17,
+          "st": 29,
+          "ct": 46,
+          "tat": 46,
+          "wt": 29
+        },
+        {
+          "process": "P2",
+          "at": 0,
+          "bt": 14,
+          "st": 15,
+          "ct": 29,
+          "tat": 29,
+          "wt": 15
+        },
+        {
+          "process": "P3",
+          "at": 0,
+          "bt": 19,
+          "st": 46,
+          "ct": 65,
+          "tat": 65,
+          "wt": 46
+        },
+        {
+          "process": "P4",
+          "at": 0,
+          "bt": 12,
+          "st": 3,
+          "ct": 15,
+          "tat": 15,
+          "wt": 3
+        },
+        {
+          "process": "P5",
+          "at": 0,
+          "bt": 3,
+          "st": 0,
+          "ct": 3,
+          "tat": 3,
+          "wt": 0
+        }
+      ],
+      "timeline": [
+        {
+          "process": "P5",
+          "start": 0,
+          "end": 3,
+          "remaining": 0
+        },
+        {
+          "process": "P4",
+          "start": 3,
+          "end": 15,
+          "remaining": 0
+        },
+        {
+          "process": "P2",
+          "start": 15,
+          "end": 29,
+          "remaining": 0
+        },
+        {
+          "process": "P1",
+          "start": 29,
+          "end": 46,
+          "remaining": 0
+        },
+        {
+          "process": "P3",
+          "start": 46,
+          "end": 65,
+          "remaining": 0
+        }
+      ],
+      "totalTime": 65,
+      "avgWT": 18.6
+    },
+    {
+      "algorithm": "SRTF",
+      "quantum": null,
+      "rows": [
+        {
+          "process": "P1",
+          "at": 0,
+          "bt": 17,
+          "st": 29,
+          "ct": 46,
+          "tat": 46,
+          "wt": 29
+        },
+        {
+          "process": "P2",
+          "at": 0,
+          "bt": 14,
+          "st": 15,
+          "ct": 29,
+          "tat": 29,
+          "wt": 15
+        },
+        {
+          "process": "P3",
+          "at": 0,
+          "bt": 19,
+          "st": 46,
+          "ct": 65,
+          "tat": 65,
+          "wt": 46
+        },
+        {
+          "process": "P4",
+          "at": 0,
+          "bt": 12,
+          "st": 3,
+          "ct": 15,
+          "tat": 15,
+          "wt": 3
+        },
+        {
+          "process": "P5",
+          "at": 0,
+          "bt": 3,
+          "st": 0,
+          "ct": 3,
+          "tat": 3,
+          "wt": 0
+        }
+      ],
+      "timeline": [
+        {
+          "process": "P5",
+          "start": 0,
+          "end": 3,
+          "remaining": 0
+        },
+        {
+          "process": "P4",
+          "start": 3,
+          "end": 15,
+          "remaining": 0
+        },
+        {
+          "process": "P2",
+          "start": 15,
+          "end": 29,
+          "remaining": 0
+        },
+        {
+          "process": "P1",
+          "start": 29,
+          "end": 46,
+          "remaining": 0
+        },
+        {
+          "process": "P3",
+          "start": 46,
+          "end": 65,
+          "remaining": 0
+        }
+      ],
+      "totalTime": 65,
+      "avgWT": 18.6
+    },
+    {
+      "algorithm": "RR",
+      "quantum": 2,
+      "rows": [
+        {
+          "process": "P1",
+          "at": 0,
+          "bt": 17,
+          "st": 0,
+          "ct": 62,
+          "tat": 62,
+          "wt": 45
+        },
+        {
+          "process": "P2",
+          "at": 0,
+          "bt": 14,
+          "st": 2,
+          "ct": 55,
+          "tat": 55,
+          "wt": 41
+        },
+        {
+          "process": "P3",
+          "at": 0,
+          "bt": 19,
+          "st": 4,
+          "ct": 65,
+          "tat": 65,
+          "wt": 46
+        },
+        {
+          "process": "P4",
+          "at": 0,
+          "bt": 12,
+          "st": 6,
+          "ct": 51,
+          "tat": 51,
+          "wt": 39
+        },
+        {
+          "process": "P5",
+          "at": 0,
+          "bt": 3,
+          "st": 8,
+          "ct": 19,
+          "tat": 19,
+          "wt": 16
+        }
+      ],
+      "timeline": [
+        {
+          "process": "P1",
+          "start": 0,
+          "end": 2,
+          "remaining": 15
+        },
+        {
+          "process": "P2",
+          "start": 2,
+          "end": 4,
+          "remaining": 12
+        },
+        {
+          "process": "P3",
+          "start": 4,
+          "end": 6,
+          "remaining": 17
+        },
+        {
+          "process": "P4",
+          "start": 6,
+          "end": 8,
+          "remaining": 10
+        },
+        {
+          "process": "P5",
+          "start": 8,
+          "end": 10,
+          "remaining": 1
+        },
+        {
+          "process": "P1",
+          "start": 10,
+          "end": 12,
+          "remaining": 13
+        },
+        {
+          "process": "P2",
+          "start": 12,
+          "end": 14,
+          "remaining": 10
+        },
+        {
+          "process": "P3",
+          "start": 14,
+          "end": 16,
+          "remaining": 15
+        },
+        {
+          "process": "P4",
+          "start": 16,
+          "end": 18,
+          "remaining": 8
+        },
+        {
+          "process": "P5",
+          "start": 18,
+          "end": 19,
+          "remaining": 0
+        },
+        {
+          "process": "P1",
+          "start": 19,
+          "end": 21,
+          "remaining": 11
+        },
+        {
+          "process": "P2",
+          "start": 21,
+          "end": 23,
+          "remaining": 8
+        },
+        {
+          "process": "P3",
+          "start": 23,
+          "end": 25,
+          "remaining": 13
+        },
+        {
+          "process": "P4",
+          "start": 25,
+          "end": 27,
+          "remaining": 6
+        },
+        {
+          "process": "P1",
+          "start": 27,
+          "end": 29,
+          "remaining": 9
+        },
+        {
+          "process": "P2",
+          "start": 29,
+          "end": 31,
+          "remaining": 6
+        },
+        {
+          "process": "P3",
+          "start": 31,
+          "end": 33,
+          "remaining": 11
+        },
+        {
+          "process": "P4",
+          "start": 33,
+          "end": 35,
+          "remaining": 4
+        },
+        {
+          "process": "P1",
+          "start": 35,
+          "end": 37,
+          "remaining": 7
+        },
+        {
+          "process": "P2",
+          "start": 37,
+          "end": 39,
+          "remaining": 4
+        },
+        {
+          "process": "P3",
+          "start": 39,
+          "end": 41,
+          "remaining": 9
+        },
+        {
+          "process": "P4",
+          "start": 41,
+          "end": 43,
+          "remaining": 2
+        },
+        {
+          "process": "P1",
+          "start": 43,
+          "end": 45,
+          "remaining": 5
+        },
+        {
+          "process": "P2",
+          "start": 45,
+          "end": 47,
+          "remaining": 2
+        },
+        {
+          "process": "P3",
+          "start": 47,
+          "end": 49,
+          "remaining": 7
+        },
+        {
+          "process": "P4",
+          "start": 49,
+          "end": 51,
+          "remaining": 0
+        },
+        {
+          "process": "P1",
+          "start": 51,
+          "end": 53,
+          "remaining": 3
+        },
+        {
+          "process": "P2",
+          "start": 53,
+          "end": 55,
+          "remaining": 0
+        },
+        {
+          "process": "P3",
+          "start": 55,
+          "end": 57,
+          "remaining": 5
+        },
+        {
+          "process": "P1",
+          "start": 57,
+          "end": 59,
+          "remaining": 1
+        },
+        {
+          "process": "P3",
+          "start": 59,
+          "end": 61,
+          "remaining": 3
+        },
+        {
+          "process": "P1",
+          "start": 61,
+          "end": 62,
+          "remaining": 0
+        },
+        {
+          "process": "P3",
+          "start": 62,
+          "end": 64,
+          "remaining": 1
+        },
+        {
+          "process": "P3",
+          "start": 64,
+          "end": 65,
+          "remaining": 0
+        }
+      ],
+      "totalTime": 65,
+      "avgWT": 37.4
+    }
+  ]
+}

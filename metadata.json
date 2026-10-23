@@ -1,0 +1,6 @@
+{
+  "name": "CPU Scheduling Simulator & Term Project Presentation",
+  "description": "Interactive CPU Scheduling Simulator (FCFS, SJF, Round Robin) with Gantt charts, real experiment logs, code explainer, and video presentation hub.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
