@@ -1,125 +1,100 @@
-# CPU Scheduling Simulator: Full Codebase & Offline Runnable HTML Package
+# Production-Grade GitHub README.md for CPU Scheduling Simulator
 
-ยกระดับปุ่ม "ดาวน์โหลดโปรแกรม" ให้สามารถส่งออกไฟล์ ZIP ที่ประกอบด้วยทั้งซอร์สโค้ดโปรเจกต์เว็บทั้งหมด (Full React + TypeScript + Vite Codebase) ควบคู่กับแอปพลิเคชัน HTML แบบ Standalone (Zero-Dependency Offline HTML Simulator) ที่ผู้ใช้งานสามารถดับเบิลคลิกเปิดรันบนเว็บเบราว์เซอร์ได้ทันทีโดยไม่ต้องใช้อินเทอร์เน็ตหรือติดตั้ง Node.js พร้อมแนบซอร์สโค้ดภาษา C++ และ Python สำหรับประกอบรายงานฉบับสมบูรณ์
+A comprehensive, international-standard, and visually appealing `README.md` for the CPU Scheduling Simulator project, formatted for GitHub with status badges, system architecture diagrams, mathematical formulations, algorithmic breakdowns, setup guides, file tree references, presentation video links, and academic integrity disclosures.
 
 ---
 
 ## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> สรุปข้อตกลงที่ได้รับการยืนยันจากผู้ใช้ใน Phase 1:
-> 1. **โครงสร้างไฟล์ ZIP แบบไฮบริด (Hybrid Architecture)**: ไฟล์ ZIP จะบรรจุทั้ง (1) ไฟล์ `Run_Offline_Simulator.html` และ `index.html` แบบ Standalone Single-File ที่ฝังทั้ง CSS, UI และ Logic ครบวงจร ดับเบิลคลิกใช้งานได้ทันที และ (2) โฟลเดอร์ซอร์สโค้ดทั้งโปรเจกต์ (`src/`, `public/`, `package.json`, `vite.config.ts`, `tsconfig.json`) สำหรับนำไปพัฒนาต่อหรือตรวจสอบโครงสร้างโค้ด
-> 2. **รวมซอร์สโค้ดหลายภาษาครบถ้วน (Multi-Language Source Files)**: แนบไฟล์อัลกอริทึม CPU Scheduling (FCFS, Non-preemptive Priority/SJF, Preemptive SJF/SRTF, Round Robin) ในภาษา C++ (`scheduler.cpp`), Python (`scheduler.py`) และ JavaScript/TypeScript (`scheduler.js` / `scheduler.ts`) ให้อาจารย์และผู้ตรวจนำไปทดสอบใน terminal ได้ทันที
-> 3. **การทำงานแบบออฟไลน์ 100% (Zero-Dependency Guarantee)**: ไฟล์ HTML ออฟไลน์จะไม่มีการดึง CDN ภายนอก ทั้งฟอนต์ สไตล์ UI กล่องกรอกข้อมูล Process/AT/BT ปุ่มสลับอัลกอริทึม การคำนวณ ST, CT, TAT, WT, AVG WT และ Gantt Chart จะถูก Render ด้วย Vanilla HTML/CSS/JavaScript ในตัวไฟล์เดียว
+> The user confirmed the following specifications in Phase 1:
+> - **Language**: Full English standard (`ภาษาอังกฤษล้วนสำหรับระดับสากล`) optimized for international developers, recruiters, and academic review on GitHub.
+> - **Scope**: Comprehensive coverage (`ครบถ้วนทุกมิติ`) spanning theoretical OS background, math equations, interactive features, setup/build guides, directory breakdown, presentation video links, and academic project context.
+
+- **Confirmed Decision 1**: Language is set to professional English with clear technical terminology.
+- **Confirmed Decision 2**: Presentation Video section will include the YouTube presentation link (`https://youtu.be/unWcTIsrMGI`) and AI disclosure reference.
+- **Confirmed Decision 3**: Full coverage of all 4 scheduling algorithms (FCFS, SJF Non-Preemptive, SJF Preemptive / SRTF, Round Robin) with LaTeX/Unicode mathematical formulas for ST, CT, TAT, WT, and Averages.
 
 ---
 
 ## 1. Overview & Core Concept
 
-- **What It Does**: เมื่อผู้ใช้คลิกปุ่ม "ดาวน์โหลดโปรแกรม" จากแถบสารบัญด้านข้าง (Sidebar TOC) หรือเมนูด่วน ระบบจะสร้างไฟล์บีบอัด `CS422-CPU-Scheduling-Complete.zip` ที่มีข้อมูลครบทุกมิติ:
-  - **Offline Runner**: `Run_Offline_Simulator.html` (และ `index.html`) เปิดใน Google Chrome, Microsoft Edge, Safari หรือ Firefox ได้ทันทีแบบออฟไลน์
-  - **Complete Web Project Source**: ไฟล์โปรเจกต์ React + TypeScript + Tailwind ทั้งหมดที่ตรงกับโครงสร้างจริงใน Workspace
-  - **Academic Multi-Language Implementations**: `scheduler.cpp`, `scheduler.py`, `scheduler.js` พร้อมชุดคำสั่งทดสอบผ่าน Terminal
-  - **Documentation & Test Data**: `README.md`, `HOW_TO_RUN_OFFLINE.txt`, `test-cases.json`, และ `report-template.md`
-- **Target Audience**: อาจารย์ประจำวิชา (ตรวจโค้ด รันโปรแกรมออฟไลน์ หรือคอมไพล์ C++/Python), กรรมการประเมิน Term Project, และนักศึกษาในกลุ่มที่ต้องส่งมอบไฟล์ครบชุด
-- **Key Value**: แก้ปัญหาอาจารย์ไม่มี Node.js หรือเปิดโปรเจกต์ไม่เป็น — แค่ดับเบิลคลิกไฟล์ HTML ก็รันแบบจำลองและเห็น Gantt Chart ได้ทันที พร้อมส่งโค้ดทุกภาษาตามเกณฑ์การให้คะแนน
+- **What It Is**: An interactive, modern web-based simulation and educational laboratory for Operating Systems CPU Scheduling algorithms, built with React 19, TypeScript, Vite, and Tailwind CSS.
+- **Target Audience**: Computer Science students, Operating Systems instructors, software engineers, and GitHub evaluators.
+- **Key Value**: Provides visual clarity on how the OS kernel schedules processes onto the CPU through interactive Gantt charts, real-time recalculations, side-by-side benchmark matrices, manual step-by-step verification, and educational code walkthroughs.
 
 ---
 
-## 2. User Experience & Visual Design
+## 2. Visual & Structural Architecture for README.md
 
-### Key User Flows
-1. **คลิกดาวน์โหลด**: ผู้ใช้กดปุ่ม "ดาวน์โหลดโปรแกรม" ในแถบสารบัญด้านข้าง
-2. **สร้างและบันทึก ZIP**: ระบบประมวลผลผ่าน `JSZip` รวบรวมไฟล์ทั้งหมดและดาวน์โหลดอัตโนมัติ พร้อมแสดงสถานะ Toast "ดาวน์โหลดโค้ดและไฟล์ออฟไลน์สำเร็จ"
-3. **เปิดใช้งานแบบออฟไลน์**:
-   - ผู้ใช้แตกไฟล์ ZIP จะพบไฟล์ `Run_Offline_Simulator.html` อยู่ที่ Root Directory
-   - ดับเบิลคลิกเปิดไฟล์ขึ้นมา จะพบหน้าจอ Interactive CPU Scheduling Simulator สไตล์ Modern Academic (ธีม Slate Dark/Light สะอาดตา)
-   - ปรับแต่งจำนวนโปรเซส, กรอกหรือสลับค่า AT/BT ได้อิสระ, ปรับ Time Quantum, และกดจำลองการทำงาน
-   - ตารางผลลัพธ์ (ST, CT, TAT, WT, AVG WT) และ Gantt Chart ตอบสนองทันทีแบบ Real-time พร้อมปุ่ม Copy สรุปผล
-
-### Visual Identity & Theme for Offline Simulator
-- **Canvas & Surface**: โทนสี Deep Slate (`#0F172A`) ควบคู่กับบล็อกข้อมูล `#1E293B` และเส้นขอบละเอียด `rgba(255,255,255,0.08)` สะท้อนความเป็นเครื่องมือวิศวกรรมคอมพิวเตอร์
-- **Gantt Chart Visual**: บล็อกสีมาตรฐานกำกับแต่ละโปรเซส (P1 Sky Blue, P2 Emerald, P3 Amber, P4 Purple, P5 Rose) ตัวเลขช่วงเวลาใช้ `font-mono tabular-nums` ชัดเจน ไม่เบี้ยว
-- **Zero-Pill Typography**: ส่วนหัวและค่าพารามิเตอร์แสดงผลอย่างเรียบหรู คั่นด้วย `·` ตามมาตรฐาน Anti-Slop
-- **Responsive Controls**: ตารางโปรเซสปรับความกว้างช่อง AT และ BT พอดี ไม่ถูกตัดทอน พร้อมปุ่ม Add/Remove Process
-
----
-
-## 3. Key Product Decisions & Trade-Offs
-
-### Decision 1: การจัดทำ Standalone Offline Simulator แบบ Zero-Dependency
-- **Chosen Approach**: สร้างไฟล์ `Run_Offline_Simulator.html` ที่รวบรวม HTML โครงสร้าง, Embedded Modern CSS, และ Vanilla JavaScript สำหรับอัลกอริทึมทั้ง 4 (FCFS, Priority/SJF, SRTF, RR) และตัววาด Gantt Chart ในไฟล์เดียว
-- **Why**: อาจารย์หรือผู้ตรวจมักไม่มีสภาพแวดล้อม `npm` หรือ `node_modules` ในเครื่อง การมีไฟล์ HTML ไฟล์เดียวที่ดับเบิลคลิกแล้วทำงานได้ทันทีแบบ 100% Offline รับประกันคะแนนและการทำงานโดยไม่มีข้อผิดพลาดเรื่องสภาพแวดล้อม
-- **Alternatives Considered**: การ Export เฉพาะโค้ด React ดิบ จะทำให้อาจารย์ที่เปิดผ่านเบราว์เซอร์ตรงๆ เจอหน้าจอว่างเปล่า (Blank Page) หรือติดปัญหา CORS/Vite Bundling
-
-### Decision 2: การแถมชุดไฟล์ C++ และ Python
-- **Chosen Approach**: สร้างไฟล์ `scheduler.cpp` (ใช้ STL vector, queue, algorithm) และ `scheduler.py` (ใช้ dataclasses และ standard library) ที่ให้ผลลัพธ์ ST, CT, TAT, WT, AVG WT ตรงกับแบบจำลองหน้าเว็บ 100%
-- **Why**: วิชา Operating Systems มักมีเกณฑ์ให้ส่ง Source Code ภาษาเบื้องต้น (C/C++ หรือ Python) การมีทั้งสองภาษาเสริมควบคู่กับ Web Simulator ช่วยให้รายงานวิชาการสมบูรณ์แบบ
-- **Alternatives Considered**: มีเฉพาะ JavaScript อย่างเดียว อาจไม่ครอบคลุมเกณฑ์ของบางอาจารย์ที่ต้องการดู Implementation ในภาษา C++
-
-### Decision 3: การรวบรวม Source Code โปรเจกต์จริงใน Workspace
-- **Chosen Approach**: บรรจุไฟล์โครงสร้าง React/TypeScript หลัก (`App.tsx`, `components/*`, `utils/*`, `types/*`, `index.html`, `package.json`, `vite.config.ts`, `tsconfig.json`) เข้าไปในโฟลเดอร์ `web-project-source/`
-- **Why**: ตอบโจทย์ผู้ใช้ตามภาพ screenshot ที่ต้องการโค้ดโปรเจกต์ทั้งหมดสำหรับนำไป Build หรือ Deploy ต่อได้
-
----
-
-## 4. Technical Architecture & Data Strategy
-
-### System & ZIP Bundle Structure Diagram
+The `README.md` will follow high-standard GitHub repository conventions:
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                   CS422-CPU-Scheduling-Complete.zip                    │
-├────────────────────────────────────────────────────────────────────────┤
-│                                                                        │
-│  [1] STANDALONE OFFLINE SIMULATORS (Zero-Dependency, Run in Browser)   │
-│  ├── Run_Offline_Simulator.html      <-- ดับเบิลคลิกเปิดรันได้ทันที     │
-│  ├── index.html                      <-- ทางเข้าหลักแบบออฟไลน์          │
-│  └── HOW_TO_RUN_OFFLINE.txt          <-- คำอธิบายการใช้งานแบบย่อ       │
-│                                                                        │
-│  [2] MULTI-LANGUAGE ALGORITHM IMPLEMENTATIONS                          │
-│  ├── cplusplus/                                                        │
-│  │   └── scheduler.cpp               <-- C++17 Standard Implementation │
-│  ├── python/                                                           │
-│  │   └── scheduler.py                <-- Python 3.8+ Implementation    │
-│  └── javascript/                                                       │
-│      └── scheduler.js                <-- Node.js / Browser Engine      │
-│                                                                        │
-│  [3] FULL REACT / TYPESCRIPT PROJECT SOURCE (Workspace Source Tree)    │
-│  └── web-project-source/                                               │
-│      ├── package.json                                                  │
-│      ├── vite.config.ts                                                │
-│      ├── tsconfig.json                                                 │
-│      ├── index.html                                                    │
-│      └── src/                                                          │
-│          ├── App.tsx                                                   │
-│          ├── main.tsx                                                  │
-│          ├── index.css                                                 │
-│          ├── components/ (Header, Simulator, Gantt, Comparison, TOC)   │
-│          ├── utils/ (algorithms, schedulerGenerator, exportUtils)      │
-│          ├── types/ (simulator.ts)                                     │
-│          └── data/ (initialProcesses.ts, members.ts)                   │
-│                                                                        │
-│  [4] ACADEMIC DOCUMENTATION & TEST SUITES                              │
-│  ├── README.md                       <-- คู่มือและสารบัญโครงการ         │
-│  ├── test-cases.json                 <-- ข้อมูลทดสอบ Case 1, 2, 3       │
-│  └── report-summary.md               <-- สรุปผลสำหรับใส่เล่มรายงาน      │
-│                                                                        │
-└────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│  Hero Header: Project Title, Badges, Tagline & Quick Links   │
+├──────────────────────────────────────────────────────────────┤
+│  ⚡ Live Demo & Video Presentation Links                      │
+│     - YouTube Video Demo: https://youtu.be/unWcTIsrMGI       │
+│     - AI Transparency & Behind-The-Scenes                    │
+├──────────────────────────────────────────────────────────────┤
+│  🎯 Key Features Breakdown (Visual & Interactive Highlights) │
+├──────────────────────────────────────────────────────────────┤
+│  🧠 Supported Scheduling Algorithms & Mathematical Models     │
+│     - FCFS, SJF Non-Preemptive, SJF Preemptive (SRTF), RR    │
+│     - Formulas: TAT = CT - AT, WT = TAT - BT, Avg Metrics    │
+│     - Tie-breaking rules & Preemption mechanics              │
+├──────────────────────────────────────────────────────────────┤
+│  🛠️ Technology Stack & Toolchain                             │
+│     - React 19, TypeScript, Vite 8, Tailwind CSS v4, Lucide  │
+├──────────────────────────────────────────────────────────────┤
+│  🚀 Getting Started (Installation, Dev Server & Production)  │
+│     - npm install, npm run dev, npm run build                │
+│     - Standalone Offline HTML Export & ZIP Bundle            │
+├──────────────────────────────────────────────────────────────┤
+│  📁 Project Directory & File Role Reference                  │
+│     - Annotated breakdown of src/components, src/utils, etc. │
+├──────────────────────────────────────────────────────────────┤
+│  🎓 Academic Course Context & Attribution                    │
+│     - Operating Systems Term Project                         │
+│     - Advisor: Asst. Prof. Dr. Kingkarn Sookhanaphibarn      │
+│     - Team Members & Role Distribution Template              │
+├──────────────────────────────────────────────────────────────┤
+│  📜 License & Academic Integrity                             │
+└──────────────────────────────────────────────────────────────┘
 ```
-
-### Component & Generator Flow Mapping
-- **`SidebarTOC.tsx` / `App.tsx`**: ควบคุม Trigger เมื่อคลิกปุ่ม "ดาวน์โหลดโปรแกรม"
-- **`src/utils/schedulerGenerator.ts`**:
-  - `generateOfflineHtml(bursts, quantum)`: สร้าง HTML String ขนาดกะทัดรัดแต่สมบูรณ์ ฝัง CSS + Vanilla JS คำนวณ FCFS, Priority, SRTF, RR และวาด Gantt Chart สวยงาม
-  - `generateCppSource()`: สร้างโค้ด C++ พร้อม main() ตัวอย่างการรัน
-  - `generatePythonSource()`: สร้างโค้ด Python พร้อม CLI argument runner
-  - `downloadFullProjectZip(bursts, quantum, ...)`: รวบรวมทุกส่วนเข้า JSZip และส่งออกเป็น `CS422-CPU-Scheduling-Complete.zip`
-- **State Integration**: ดึงชุดข้อมูลโปรเซสและพารามิเตอร์ปัจจุบันที่ผู้ใช้ตั้งไว้บนหน้าจอ (Current Processes & Quantum) นำไปตั้งเป็นค่าเริ่มต้นในไฟล์ HTML ออฟไลน์และชุดทดสอบอัตโนมัติ
 
 ---
 
-## 5. Planned Verification & Acceptance Criteria
-1. **Compilation Check**: ตรวจสอบว่าแอปพลิเคชันยังคง Build ผ่าน (`compile_applet`) โดยไม่มี Error หรือ Missing Dependencies
-2. **ZIP Generation Test**: ทดสอบการกดปุ่ม "ดาวน์โหลดโปรแกรม" ตรวจสอบโครงสร้างไฟล์ภายใน ZIP ว่าครบถ้วนทั้ง `Run_Offline_Simulator.html`, C++, Python, และซอร์สโค้ด React
-3. **Offline HTML Verification**: ตรวจสอบว่า `Run_Offline_Simulator.html` มี Logic ครบ 100%, สลับอัลกอริทึมได้, กรอก AT และ BT ได้, วาด Gantt Chart ถูกต้อง และไม่มี External Network Calls ใดๆ
+## 3. Key Content Sections in Detail
+
+### 3.1 Badges & Metadata
+- Shields.io badges: React 19, TypeScript, Vite, Tailwind CSS v4, License Apache-2.0, PRs Welcome.
+
+### 3.2 Scheduling Algorithms & Formulas
+- **FCFS (First-Come, First-Served)**: Non-preemptive, FIFO execution.
+- **SJF Non-Preemptive (Shortest Job First)**: Shortest Burst Time first, tie-break by lower process ID.
+- **SJF Preemptive (SRTF - Shortest Remaining Time First)**: Dynamic preemption whenever a shorter remaining burst arrives.
+- **Round Robin (RR)**: Time Quantum slicing with ready queue re-insertion.
+- **Formulas Table**:
+  $$\text{Turnaround Time (TAT)} = \text{Completion Time (CT)} - \text{Arrival Time (AT)}$$
+  $$\text{Waiting Time (WT)} = \text{Turnaround Time (TAT)} - \text{Burst Time (BT)}$$
+  $$\text{Average Waiting Time (AWT)} = \frac{\sum_{i=1}^{n} \text{WT}_i}{n}$$
+
+### 3.3 Quick Start & Build Instructions
+- Prerequisites (Node.js 18+ or 20+).
+- Commands: `npm install`, `npm run dev`, `npm run build`, `npm run lint`.
+- Offline usage instructions (opening the bundled single-file HTML directly in any modern browser without web servers).
+
+### 3.4 File Map
+- Clear table documenting every file in `src/` (e.g. `App.tsx`, `components/SimulatorSection.tsx`, `components/GanttChart.tsx`, `components/VideoSection.tsx`, `utils/algorithms.ts`, etc.) and its explicit responsibility.
+
+### 3.5 Course & Team Info
+- Academic Term Project metadata honoring Asst. Prof. Dr. Kingkarn Sookhanaphibarn, with placeholders for team member names, student IDs, and assigned duties.
+
+---
+
+## 4. Implementation Steps Upon Approval
+
+1. **Write `/README.md`**: Author the full markdown file with GitHub-optimized tables, code blocks, shields, and diagrams.
+2. **Verify Project Compilation**: Run `compile_applet` / `lint_applet` to ensure codebase integrity.
+3. **Summary**: Provide a crisp confirmation of the newly created documentation ready for `git add README.md && git commit -m "docs: add comprehensive README.md" && git push`.
