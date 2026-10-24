@@ -1844,6 +1844,8 @@ export function generateReadmeText(): string {
 อาจารย์ผู้สอน: ผศ.ดร.กิ่งกาญจน์ สุขขะภิบาล
 ภาควิชาวิทยาการคอมพิวเตอร์และสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
 
+🔗 **GitHub Repository:** https://github.com/Bunwitchaikun/CPU_SCHEDULING.git
+
 ---
 
 ## 🛠️ รายการ Tool Stack ทั้งหมด (Project Technology Stack)

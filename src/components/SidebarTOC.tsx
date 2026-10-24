@@ -8,6 +8,7 @@ import {
   ChevronDown,
   ChevronRight,
   Download,
+  Github,
   ListTree,
   SlidersHorizontal,
   Bookmark,
@@ -334,17 +335,29 @@ export const SidebarTOC: React.FC<SidebarTOCProps> = ({
           })}
         </nav>
 
-        {/* Quick Program Download Action inside Sidebar */}
+        {/* Quick Program Download & GitHub Actions inside Sidebar */}
         <div className="mt-3 pt-3 border-t border-slate-100 shrink-0">
-          <button
-            type="button"
-            onClick={onDownloadProgram}
-            className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-colors shadow-2xs cursor-pointer active:scale-95"
-            title="ดาวน์โหลดไฟล์ zip ของทั้งระบบ (CS422-CPU-Scheduling.zip)"
-          >
-            <Download className="w-4 h-4" />
-            <span>ดาวน์โหลดโปรแกรม (.zip)</span>
-          </button>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://github.com/Bunwitchaikun/CPU_SCHEDULING.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition-colors cursor-pointer active:scale-95 border border-slate-200"
+              title="ดูซอร์สโค้ดโปรเจกต์บน GitHub (Bunwitchaikun/CPU_SCHEDULING)"
+            >
+              <Github className="w-3.5 h-3.5" />
+              <span>GitHub</span>
+            </a>
+            <button
+              type="button"
+              onClick={onDownloadProgram}
+              className="flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-colors shadow-2xs cursor-pointer active:scale-95"
+              title="ดาวน์โหลดไฟล์ zip ของทั้งระบบ (CS422-CPU-Scheduling.zip)"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>ดาวน์โหลด .zip</span>
+            </button>
+          </div>
           <p className="text-[10px] text-slate-400 text-center mt-1.5 leading-tight">
             มีไฟล์ HTML เปิดรันได้ทันทีแบบออฟไลน์ + โค้ด C++, Python และซอร์สโค้ดโปรเจกต์ครบถ้วน
           </p>

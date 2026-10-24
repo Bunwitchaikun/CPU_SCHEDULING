@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { BookOpen, CheckCircle, Users } from 'lucide-react';
+import { BookOpen, CheckCircle, Github, Users } from 'lucide-react';
 import { TeamMember } from '../types/simulator';
 
 interface ProjectOverviewProps {
@@ -126,6 +126,16 @@ export const ProjectOverview: React.FC<ProjectOverviewProps> = ({ members }) => 
               แผนผังแสดงความรับผิดชอบของโมดูลในระบบ ตั้งแต่การรับข้อมูล (Input) การประมวลผล (Algorithm Engine) ไปจนถึงการแสดงผล (Visual Presentation)
             </p>
           </div>
+          <a
+            href="https://github.com/Bunwitchaikun/CPU_SCHEDULING.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 rounded-xl transition-all shadow-xs shrink-0 self-start sm:self-center cursor-pointer active:scale-95"
+            title="ดูซอร์สโค้ดโปรเจกต์บน GitHub (Bunwitchaikun/CPU_SCHEDULING)"
+          >
+            <Github className="w-4 h-4 text-slate-800" />
+            <span>GitHub Repository</span>
+          </a>
         </div>
 
         {/* Data Pipeline Flow Banner matching image_68d0cd1d.png */}

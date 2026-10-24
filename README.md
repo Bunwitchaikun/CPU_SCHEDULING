@@ -4,6 +4,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)](https://github.com/Bunwitchaikun/CPU_SCHEDULING.git)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![YouTube Demo](https://img.shields.io/badge/YouTube-Video_Presentation-FF0000?logo=youtube&logoColor=white)](https://youtu.be/unWcTIsrMGI)
 
@@ -163,8 +164,8 @@ $$\text{Average Waiting Time (AWT)} = \frac{1}{n} \sum_{i=1}^{n} WT_i$$
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/cpu-scheduling-simulator.git
-   cd cpu-scheduling-simulator
+   git clone https://github.com/Bunwitchaikun/CPU_SCHEDULING.git
+   cd CPU_SCHEDULING
    ```
 
 2. **Install project dependencies**:

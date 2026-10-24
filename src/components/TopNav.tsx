@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Cpu, Download } from 'lucide-react';
+import { Cpu, Download, Github } from 'lucide-react';
 
 interface TopNavProps {
   onQuickSimulate: () => void;
@@ -72,6 +72,17 @@ export const TopNav: React.FC<TopNavProps> = ({ onQuickSimulate, onDownloadProgr
 
         {/* Zone 3: Primary Action */}
         <div className="flex items-center gap-2 shrink-0">
+          <a
+            href="https://github.com/Bunwitchaikun/CPU_SCHEDULING.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 rounded-lg transition-all shadow-xs whitespace-nowrap cursor-pointer active:scale-95"
+            title="ดูซอร์สโค้ดโปรเจกต์บน GitHub (Bunwitchaikun/CPU_SCHEDULING)"
+            aria-label="GitHub Repository"
+          >
+            <Github className="w-3.5 h-3.5" />
+            <span>GitHub</span>
+          </a>
           <button
             type="button"
             onClick={onDownloadProgram}

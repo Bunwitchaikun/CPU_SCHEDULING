@@ -1,100 +1,88 @@
-# Production-Grade GitHub README.md for CPU Scheduling Simulator
+# GitHub Repository Quick Access Button
 
-A comprehensive, international-standard, and visually appealing `README.md` for the CPU Scheduling Simulator project, formatted for GitHub with status badges, system architecture diagrams, mathematical formulations, algorithmic breakdowns, setup guides, file tree references, presentation video links, and academic integrity disclosures.
-
----
+Add a dedicated GitHub repository link button beside the existing "ดาวน์โหลดโปรแกรม (.zip)" button on the top navigation bar (`TopNav.tsx`), directing users to `https://github.com/Bunwitchaikun/CPU_SCHEDULING.git` in a new tab.
 
 ## User Review & Critical Decisions
 
 > [!IMPORTANT]
-> The user confirmed the following specifications in Phase 1:
-> - **Language**: Full English standard (`ภาษาอังกฤษล้วนสำหรับระดับสากล`) optimized for international developers, recruiters, and academic review on GitHub.
-> - **Scope**: Comprehensive coverage (`ครบถ้วนทุกมิติ`) spanning theoretical OS background, math equations, interactive features, setup/build guides, directory breakdown, presentation video links, and academic project context.
+> All design and behavioral requirements have been confirmed via Phase 1 clarification:
+> - **Button Style & Label**: GitHub icon accompanied by the "GitHub" text label.
+> - **Interaction & Navigation**: Opens `https://github.com/Bunwitchaikun/CPU_SCHEDULING.git` in a fresh browser tab (`target="_blank" rel="noopener noreferrer"`).
+> - **Placement**: Situated directly beside the "ดาวน์โหลดโปรแกรม (.zip)" button in Zone 3 of `TopNav.tsx`.
 
-- **Confirmed Decision 1**: Language is set to professional English with clear technical terminology.
-- **Confirmed Decision 2**: Presentation Video section will include the YouTube presentation link (`https://youtu.be/unWcTIsrMGI`) and AI disclosure reference.
-- **Confirmed Decision 3**: Full coverage of all 4 scheduling algorithms (FCFS, SJF Non-Preemptive, SJF Preemptive / SRTF, Round Robin) with LaTeX/Unicode mathematical formulas for ST, CT, TAT, WT, and Averages.
+- **Confirmed Decision 1**: GitHub icon with "GitHub" label.
+- **Confirmed Decision 2**: Open external repository URL in a new tab (`target="_blank" rel="noopener noreferrer"`).
+- **Default Theme Integration**: Styled as a secondary dark pill (`bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700`) to harmoniously complement the primary indigo download button.
 
 ---
 
 ## 1. Overview & Core Concept
 
-- **What It Is**: An interactive, modern web-based simulation and educational laboratory for Operating Systems CPU Scheduling algorithms, built with React 19, TypeScript, Vite, and Tailwind CSS.
-- **Target Audience**: Computer Science students, Operating Systems instructors, software engineers, and GitHub evaluators.
-- **Key Value**: Provides visual clarity on how the OS kernel schedules processes onto the CPU through interactive Gantt charts, real-time recalculations, side-by-side benchmark matrices, manual step-by-step verification, and educational code walkthroughs.
+- **What It Does**: Provides one-click access to the project's source code on GitHub directly from the top navigation bar, enabling academic evaluators, students, and collaborators to review the repository, commit history, and release tags without navigating away from the running simulator.
+- **Target Audience / Persona**: Instructor (ผศ.ดร.กิ่งกาญจน์ สุขขะภิบาล), teaching assistants, examiners, and fellow students reviewing the CS422 Term Project.
+- **Key Value**: Immediate repository discoverability, seamless navigation between live interactive simulator and Git version control, adhering to standard open-source academic project presentation best practices.
 
 ---
 
-## 2. Visual & Structural Architecture for README.md
+## 2. User Experience & Visual Design
 
-The `README.md` will follow high-standard GitHub repository conventions:
+- **Key User Flows**:
+  1. The user visits the CPU Scheduling Simulator application.
+  2. On the sticky top bar (`TopNav`), right next to the indigo "ดาวน์โหลดโปรแกรม (.zip)" button, the user sees the GitHub button with the official GitHub mark and label "GitHub".
+  3. Clicking the button opens `https://github.com/Bunwitchaikun/CPU_SCHEDULING.git` in a new browser tab without interrupting the ongoing CPU simulation state or page scroll position.
+
+- **Visual Identity & Theme**:
+  - *Aesthetic Direction*: Dark slate utilitarian modern UI with crisp borders and micro-elevation.
+  - *Color Palette & Tokens*:
+    - Background: `bg-slate-800 hover:bg-slate-700 active:bg-slate-800`
+    - Text: `text-slate-200 hover:text-white`
+    - Border: `border border-slate-700 hover:border-slate-600`
+    - Focus: `focus-visible:ring-2 focus-visible:ring-indigo-500`
+  - *Typography & Dimensions*: `text-xs sm:text-sm font-semibold`, padding `px-3 py-1.5`, matching the height and curvature (`rounded-lg`) of the download button.
+  - *Iconography*: Crisp GitHub Octocat SVG mark (`w-4 h-4`) aligned cleanly with the label.
+  - *Responsive Layout*: Flex container with `shrink-0` ensuring both buttons remain cleanly accessible across desktop, tablet, and mobile breakpoints without overflow clipping.
+
+---
+
+## 3. Key Product Decisions & Trade-Offs
+
+- **Decision 1: Direct Anchor Link (`<a>`) vs. JavaScript Window Handler (`window.open`)**
+  - *Chosen Approach*: Standard HTML `<a>` anchor tag with `href="https://github.com/Bunwitchaikun/CPU_SCHEDULING.git"`, `target="_blank"`, and `rel="noopener noreferrer"`.
+  - *Why*: Native HTML anchors avoid popup blockers in sandboxed iframe environments, allow right-click ("Open in new tab / Copy link"), and provide optimal accessibility and SEO crawler discovery.
+  - *Alternatives Considered*: `window.open()` in an onClick handler was discarded because browsers and sandboxed iframes can block programmatic window opens.
+
+- **Decision 2: Visual Hierarchy (Secondary Neutral vs. Primary Accent)**
+  - *Chosen Approach*: Slate dark button style (`bg-slate-800 border-slate-700`) beside the primary indigo download button.
+  - *Why*: Balances the top bar visual weight so the primary action ("ดาวน์โหลดโปรแกรม") retains prominence while the GitHub button is immediately recognizable and clearly distinguishable.
+
+---
+
+## 4. Technical Architecture & Component Layout
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│  Hero Header: Project Title, Badges, Tagline & Quick Links   │
-├──────────────────────────────────────────────────────────────┤
-│  ⚡ Live Demo & Video Presentation Links                      │
-│     - YouTube Video Demo: https://youtu.be/unWcTIsrMGI       │
-│     - AI Transparency & Behind-The-Scenes                    │
-├──────────────────────────────────────────────────────────────┤
-│  🎯 Key Features Breakdown (Visual & Interactive Highlights) │
-├──────────────────────────────────────────────────────────────┤
-│  🧠 Supported Scheduling Algorithms & Mathematical Models     │
-│     - FCFS, SJF Non-Preemptive, SJF Preemptive (SRTF), RR    │
-│     - Formulas: TAT = CT - AT, WT = TAT - BT, Avg Metrics    │
-│     - Tie-breaking rules & Preemption mechanics              │
-├──────────────────────────────────────────────────────────────┤
-│  🛠️ Technology Stack & Toolchain                             │
-│     - React 19, TypeScript, Vite 8, Tailwind CSS v4, Lucide  │
-├──────────────────────────────────────────────────────────────┤
-│  🚀 Getting Started (Installation, Dev Server & Production)  │
-│     - npm install, npm run dev, npm run build                │
-│     - Standalone Offline HTML Export & ZIP Bundle            │
-├──────────────────────────────────────────────────────────────┤
-│  📁 Project Directory & File Role Reference                  │
-│     - Annotated breakdown of src/components, src/utils, etc. │
-├──────────────────────────────────────────────────────────────┤
-│  🎓 Academic Course Context & Attribution                    │
-│     - Operating Systems Term Project                         │
-│     - Advisor: Asst. Prof. Dr. Kingkarn Sookhanaphibarn      │
-│     - Team Members & Role Distribution Template              │
-├──────────────────────────────────────────────────────────────┤
-│  📜 License & Academic Integrity                             │
-└──────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│ TopNav (Sticky Header)                                                │
+│                                                                        │
+│ ┌──────────────────────┐  ┌────────────────┐  ┌──────────────────────┐ │
+│ │ Zone 1: Branding     │  │ Zone 2: Nav    │  │ Zone 3: Actions      │ │
+│ │ CPU Scheduling Sim   │  │ 1.จำลอง..7.AI  │  │ [GitHub] [ดาวน์โหลด] │ │
+│ └──────────────────────┘  └────────────────┘  └──────────┬───────────┘ │
+└──────────────────────────────────────────────────────────┼─────────────┘
+                                                           │
+                                   ┌───────────────────────┴───────────────────────┐
+                                   │                                               │
+                                   ▼                                               ▼
+                      ┌────────────────────────┐                     ┌────────────────────────┐
+                      │ <a href="...github...">│                     │ <button onClick=... >  │
+                      │ GitHub Icon + Label    │                     │ Download Zip (.zip)    │
+                      │ target="_blank"        │                     │ HTML & source code     │
+                      └────────────────────────┘                     └────────────────────────┘
 ```
 
----
+### Component & State Mapping
 
-## 3. Key Content Sections in Detail
-
-### 3.1 Badges & Metadata
-- Shields.io badges: React 19, TypeScript, Vite, Tailwind CSS v4, License Apache-2.0, PRs Welcome.
-
-### 3.2 Scheduling Algorithms & Formulas
-- **FCFS (First-Come, First-Served)**: Non-preemptive, FIFO execution.
-- **SJF Non-Preemptive (Shortest Job First)**: Shortest Burst Time first, tie-break by lower process ID.
-- **SJF Preemptive (SRTF - Shortest Remaining Time First)**: Dynamic preemption whenever a shorter remaining burst arrives.
-- **Round Robin (RR)**: Time Quantum slicing with ready queue re-insertion.
-- **Formulas Table**:
-  $$\text{Turnaround Time (TAT)} = \text{Completion Time (CT)} - \text{Arrival Time (AT)}$$
-  $$\text{Waiting Time (WT)} = \text{Turnaround Time (TAT)} - \text{Burst Time (BT)}$$
-  $$\text{Average Waiting Time (AWT)} = \frac{\sum_{i=1}^{n} \text{WT}_i}{n}$$
-
-### 3.3 Quick Start & Build Instructions
-- Prerequisites (Node.js 18+ or 20+).
-- Commands: `npm install`, `npm run dev`, `npm run build`, `npm run lint`.
-- Offline usage instructions (opening the bundled single-file HTML directly in any modern browser without web servers).
-
-### 3.4 File Map
-- Clear table documenting every file in `src/` (e.g. `App.tsx`, `components/SimulatorSection.tsx`, `components/GanttChart.tsx`, `components/VideoSection.tsx`, `utils/algorithms.ts`, etc.) and its explicit responsibility.
-
-### 3.5 Course & Team Info
-- Academic Term Project metadata honoring Asst. Prof. Dr. Kingkarn Sookhanaphibarn, with placeholders for team member names, student IDs, and assigned duties.
-
----
-
-## 4. Implementation Steps Upon Approval
-
-1. **Write `/README.md`**: Author the full markdown file with GitHub-optimized tables, code blocks, shields, and diagrams.
-2. **Verify Project Compilation**: Run `compile_applet` / `lint_applet` to ensure codebase integrity.
-3. **Summary**: Provide a crisp confirmation of the newly created documentation ready for `git add README.md && git commit -m "docs: add comprehensive README.md" && git push`.
+- **Target Component**: `/src/components/TopNav.tsx`
+- **Zone 3 Updates**:
+  - Insert `<a href="https://github.com/Bunwitchaikun/CPU_SCHEDULING.git" target="_blank" rel="noopener noreferrer" className="...">` directly before or beside `<button onClick={onDownloadProgram}>`.
+  - Inline the GitHub SVG icon to guarantee 100% SVG fidelity and zero dependency friction.
+  - Add descriptive accessibility attribute `aria-label="View source code on GitHub"`.
