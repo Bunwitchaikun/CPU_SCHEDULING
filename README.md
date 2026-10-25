@@ -6,7 +6,8 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?logo=github&logoColor=white)](https://github.com/Bunwitchaikun/CPU_SCHEDULING.git)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![YouTube Demo](https://img.shields.io/badge/YouTube-Video_Presentation-FF0000?logo=youtube&logoColor=white)](https://youtu.be/unWcTIsrMGI)
+[![YouTube Part 1](https://img.shields.io/badge/YouTube-Part_1:_Program_Demo-FF0000?logo=youtube&logoColor=white)](https://youtu.be/unWcTIsrMGI)
+[![YouTube Part 2](https://img.shields.io/badge/YouTube-Part_2:_AI_Collaboration-9333EA?logo=youtube&logoColor=white)](https://youtu.be/UMgsffcb5eg)
 
 An interactive, high-fidelity **CPU Scheduling Simulator and Analysis Suite** developed as a university term project for the **Operating Systems** course under the supervision of **Asst. Prof. Dr. Kingkarn Sookhanaphibarn**.
 
@@ -14,11 +15,12 @@ This platform simulates, visualizes, and benchmarks classical CPU scheduling alg
 
 ---
 
-## 📺 Project Video Presentation
+## 📺 Project Video Presentations
 
-Watch our comprehensive video presentation walking through the core concepts, user interface, algorithm implementations, and experimental results:
+Watch our comprehensive video presentations walking through the core concepts, user interface, algorithm implementations, experimental results, and transparent AI collaboration:
 
-👉 **[Watch Video Presentation on YouTube](https://youtu.be/unWcTIsrMGI)**
+- 🎬 **Part 1 · Program Demonstration & Architecture:** 👉 **[Watch on YouTube](https://youtu.be/unWcTIsrMGI)**
+- 🤖 **Part 2 · AI Collaboration & Behind-the-Scenes:** 👉 **[Watch on YouTube](https://youtu.be/UMgsffcb5eg)**
 
 ---
 

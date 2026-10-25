@@ -1845,6 +1845,8 @@ export function generateReadmeText(): string {
 ภาควิชาวิทยาการคอมพิวเตอร์และสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
 
 🔗 **GitHub Repository:** https://github.com/Bunwitchaikun/CPU_SCHEDULING.git
+🎬 **วิดีโอส่วนที่ 1 (นำเสนอโปรแกรม):** https://youtu.be/unWcTIsrMGI
+🤖 **วิดีโอส่วนที่ 2 (การนำ AI มาใช้):** https://youtu.be/UMgsffcb5eg
 
 ---
 

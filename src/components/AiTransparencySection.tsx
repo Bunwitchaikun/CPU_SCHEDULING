@@ -10,12 +10,14 @@ import {
   Code2,
   Copy,
   Check,
+  ExternalLink,
   FileSpreadsheet,
   Lightbulb,
   MessageSquare,
   Presentation,
   Shield,
   Sparkles,
+  Video,
 } from 'lucide-react';
 import { AiPromptLog } from '../types/simulator';
 
@@ -98,6 +100,44 @@ export const AiTransparencySection: React.FC<AiTransparencySectionProps> = ({ pr
           <p className="text-indigo-800/90">
             &quot;การใช้ AI ไม่ถือเป็นข้อผิดพลาดของโครงงาน แต่ผู้จัดทำต้องตรวจสอบความถูกต้องของผลลัพธ์จาก AI เข้าใจโค้ดทุกส่วนที่นำมาใช้ สามารถอธิบายและแก้ไขโค้ดได้ ไม่คัดลอกผลลัพธ์โดยไม่มีการตรวจสอบ และระบุอย่างชัดเจนว่า AI ช่วยในส่วนใด&quot; — กลุ่มผู้จัดทำได้บันทึกขั้นตอนการใช้งานจริงไว้ครบถ้วนทั้ง 5 ขั้นตอนด้านล่างนี้
           </p>
+        </div>
+      </div>
+
+      {/* Video Presentation Banner for AI Collaboration */}
+      <div className="mb-8 p-5 bg-gradient-to-r from-purple-950 via-indigo-950 to-slate-900 text-white rounded-2xl border border-purple-800/60 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-start sm:items-center gap-3.5">
+          <div className="w-12 h-12 rounded-xl bg-purple-500/20 border border-purple-400/30 flex items-center justify-center shrink-0 text-purple-300">
+            <Video className="w-6 h-6" />
+          </div>
+          <div>
+            <div className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-purple-300 font-bold mb-1">
+              <span>วิดีโอนำเสนอส่วนที่ 2 · เบื้องหลังการใช้ AI</span>
+            </div>
+            <h3 className="text-base sm:text-lg font-bold text-white">
+              คลิปวิดีโอ: การนำ AI มาใช้ในการทำ CPU Scheduling
+            </h3>
+            <p className="text-xs sm:text-sm text-purple-200/80 mt-0.5">
+              รับชมคลิปวิดีโอสาธิตกระบวนการใช้งาน AI จริง ครบทั้ง 5 ขั้นตอน พร้อมการตรวจสอบความถูกต้องโดยมนุษย์ 100%
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2.5 shrink-0">
+          <a
+            href="https://youtu.be/UMgsffcb5eg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs sm:text-sm font-bold transition-all shadow-sm cursor-pointer active:scale-95"
+            title="เปิดรับชมวิดีโอส่วนที่ 2 บน YouTube"
+          >
+            <ExternalLink className="w-4 h-4" />
+            <span>รับชมบน YouTube</span>
+          </a>
+          <a
+            href="#vdo-ai"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-purple-200 hover:text-white text-xs sm:text-sm font-semibold transition-all border border-white/15 cursor-pointer"
+          >
+            <span>ดูในหน้าเว็บ</span>
+          </a>
         </div>
       </div>
 

@@ -19,14 +19,9 @@ const VIDEO_1_URL =
 
 /*
  * วิดีโอส่วนที่ 2: เบื้องหลังการใช้ AI
- *
- * เมื่อได้ลิงก์ Google Drive แล้ว ให้นำมาใส่ระหว่าง ''
- *
- * ตัวอย่าง:
- * const VIDEO_2_URL =
- *   'https://drive.google.com/file/d/FILE_ID/view?usp=sharing';
+ * ลิงก์คลิปวิดีโอการนำ AI มาใช้ในการทำ CPU Scheduling
  */
-const VIDEO_2_URL = '';
+const VIDEO_2_URL = 'https://youtu.be/UMgsffcb5eg';
 
 /*
  * แปลงลิงก์ YouTube หรือ Google Drive
@@ -263,7 +258,7 @@ export const VideoSection: React.FC = () => {
             )}
           </div>
 
-          {/* Google Drive Link */}
+          {/* Video 2 External Link */}
           {VIDEO_2_URL ? (
             <a
               href={VIDEO_2_URL}
@@ -274,12 +269,12 @@ export const VideoSection: React.FC = () => {
               <ExternalLink className="w-4 h-4" />
 
               <span>
-                เปิดวิดีโอบน Google Drive
+                {VIDEO_2_URL.includes('youtu') ? 'เปิดวิดีโอบน YouTube' : 'เปิดวิดีโอบน Google Drive'}
               </span>
             </a>
           ) : (
             <div className="w-full mb-5 px-4 py-2.5 rounded-xl bg-slate-50 border border-dashed border-slate-300 text-center text-xs text-slate-500">
-              ยังไม่ได้เพิ่มลิงก์ Google Drive
+              ยังไม่ได้เพิ่มลิงก์วิดีโอ
             </div>
           )}
 
