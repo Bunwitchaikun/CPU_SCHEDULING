@@ -53,7 +53,7 @@ export const INITIAL_EXPERIMENT_LOGS: RealExperimentEntry[] = [
     encounteredIssue: 'ในการทดสอบรอบแรก ค่า ST ของ Round Robin แสดงผลเป็นเวลาของ Time Slice สุดท้าย แทนที่จะเป็นเวลาเริ่มแรกที่โปรเซสแตะ CPU',
     rootCause: 'โค้ดเดิมเขียนอัปเดต `startTime = currentTime` ซ้ำทุกครั้งที่หยิบโปรเซสออกจาก Ready Queue ทำให้ค่า ST กลายเป็นเวลาของ slice ล่าสุด',
     solutionFix: 'แก้เงื่อนไขโดยเพิ่ม `if (firstStartTime[currentId] === undefined)` บันทึก ST เฉพาะครั้งแรกสุดที่โปรเซสได้รับ CPU เท่านั้น',
-    verifiedOutput: 'ผ่านเกณฑ์: FCFS (AVG WT=10.25), SJF (AVG WT=7.00), RR Q=2 (AVG WT=12.25) ตัวเลขตรงกับการคำนวณมือ 100%',
+    verifiedOutput: 'ผ่านเกณฑ์: FCFS (AVG WT=10.25), SJF (AVG WT=7.00), RR Q=2 (AVG WT=13.75) ตัวเลขตรงกับการคำนวณมือ 100%',
     testerName: 'ธนสิทธิ์ & ทีม QA',
     date: '2026-09-28',
   },

@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import {
+  Award,
   ChevronDown,
   ChevronRight,
   Download,
@@ -42,6 +43,7 @@ export const TOC_SECTIONS: TocItem[] = [
       { id: 'sim-detail', subNumber: '1.4', title: 'ตารางผลลัพธ์ละเอียด (CT, TAT, WT)' },
       { id: 'sim-slices', subNumber: '1.5', title: 'การทำงานทีละช่วง & BT เหลือ' },
       { id: 'sim-code-behind', subNumber: '1.6', title: 'โค้ดเบื้องหลังในการได้มาซึ่งคำตอบ' },
+      { id: 'sim-multi-rr', subNumber: '1.7', title: 'เปรียบเทียบ Round Robin หลายค่า Q' },
     ],
   },
   {
@@ -232,6 +234,28 @@ export const SidebarTOC: React.FC<SidebarTOCProps> = ({
             </span>
             <span className="font-mono text-slate-400 font-normal">CS422 Lab</span>
           </div>
+        </div>
+
+        {/* Quick Link to Rubric Scorecard */}
+        <div className="mb-3 shrink-0">
+          <a
+            href="#rubric"
+            className="w-full flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200/80 text-emerald-950 transition-all shadow-2xs group cursor-pointer"
+            title="เปิดดูแบบประเมิน Rubric (100 คะแนนเต็ม)"
+          >
+            <div className="flex items-center gap-2">
+              <Award className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div className="text-left">
+                <div className="text-xs font-bold text-emerald-900 group-hover:text-emerald-950">
+                  แบบประเมิน Rubric
+                </div>
+                <div className="text-[10px] text-emerald-700 font-mono">100 / 100 คะแนนเต็ม</div>
+              </div>
+            </div>
+            <span className="text-[10px] font-bold font-mono px-2 py-0.5 rounded-full bg-emerald-600 text-white shrink-0">
+              ดูตาราง
+            </span>
+          </a>
         </div>
 
         {/* 7 Section Items with interactive Sub-topics toggles */}

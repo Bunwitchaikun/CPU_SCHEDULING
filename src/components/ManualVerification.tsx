@@ -100,10 +100,11 @@ export const ManualVerification: React.FC<ManualVerificationProps> = ({
           </div>
           <button
             onClick={() => onLoadTestCase('case3')}
-            className="w-full flex items-center justify-center gap-2 py-2.5 text-xs sm:text-sm font-bold text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200 rounded-xl transition-colors shadow-2xs"
+            className="w-full flex items-center justify-center gap-2 py-2.5 text-xs sm:text-sm font-bold text-amber-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl transition-colors shadow-2xs cursor-pointer active:scale-95"
+            title="โหลดชุดข้อมูล Case 1 พร้อมกำหนด Time Quantum [1, 2, 4] และแสดงผลเปรียบเทียบทันที"
           >
-            <PlayCircle className="w-4 h-4 text-amber-600" />
-            <span>ทดสอบ Round Robin Q=4</span>
+            <PlayCircle className="w-4 h-4 text-amber-700" />
+            <span>โหลด Case 3 เปรียบเทียบ Q = 1, 2, 4</span>
           </button>
         </div>
       </div>
