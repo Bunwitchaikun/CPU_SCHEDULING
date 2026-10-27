@@ -61,7 +61,7 @@ export const TopNav: React.FC<TopNavProps> = ({
               }`}
             >
               <Award className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-              <span className="whitespace-nowrap">แบบประเมิน Rubric (100)</span>
+              <span className="whitespace-nowrap">แบบประเมิน (100)</span>
             </button>
             <button
               type="button"

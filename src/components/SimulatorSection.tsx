@@ -77,6 +77,11 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({
   const [multiQuantums, setMultiQuantums] = useState<number[]>([1, 2, 4]);
   const [newQuantumInput, setNewQuantumInput] = useState<string>('');
 
+  // Interactive Playback Controls State for Section 1 (matching image_33241f99.png & image_427dbd81.png)
+  const [playbackTime, setPlaybackTime] = useState<number>(0);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(1); // 0.5x, 1x, 2x
+
   // Simulation Outputs
   const [allOutputs, setAllOutputs] = useState<{
     fcfs: SchedulingOutput;
@@ -271,6 +276,60 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({
       ? allOutputs.rr
       : allOutputs.srtf
     : null;
+
+  const totalSimTime = activeDetailOutput?.gantt[activeDetailOutput.gantt.length - 1]?.endTime || 0;
+
+  // Reset playback whenever algorithm, processes, or quantum change
+  useEffect(() => {
+    setPlaybackTime(0);
+    setIsPlaying(false);
+  }, [selectedAlgo, processes, quantum]);
+
+  // Interactive Playback Timer Engine
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    // Speed mapping: 0.5x => 1000ms, 1x => 500ms, 2x => 250ms
+    const intervalMs = Math.round(500 / playbackSpeed);
+    const timer = setInterval(() => {
+      setPlaybackTime((prev) => {
+        if (prev + 1 >= totalSimTime) {
+          setIsPlaying(false);
+          return totalSimTime;
+        }
+        return prev + 1;
+      });
+    }, intervalMs);
+
+    return () => clearInterval(timer);
+  }, [isPlaying, playbackSpeed, totalSimTime]);
+
+  const handleTogglePlay = () => {
+    if (playbackTime >= totalSimTime) {
+      setPlaybackTime(0);
+    }
+    setIsPlaying((prev) => !prev);
+  };
+
+  const handleResetPlayback = () => {
+    setIsPlaying(false);
+    setPlaybackTime(0);
+  };
+
+  const handleStepBack = () => {
+    setIsPlaying(false);
+    setPlaybackTime((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleStepForward = () => {
+    setIsPlaying(false);
+    setPlaybackTime((prev) => Math.min(totalSimTime, prev + 1));
+  };
+
+  const handleJumpEnd = () => {
+    setIsPlaying(false);
+    setPlaybackTime(totalSimTime);
+  };
 
   const allArrivalTimesZero = processes.every((p) => p.arrivalTime === 0);
 
@@ -812,14 +871,22 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({
                 </span>
               </div>
 
-              {/* 1. Gantt Chart (No horizontal scroll!) */}
+              {/* 1. Gantt Chart (No horizontal scroll!) with Interactive Playback Controls */}
               <div id="sim-gantt" className="scroll-mt-24">
                 <GanttChart
                   blocks={activeDetailOutput.gantt}
-                  totalTime={
-                    activeDetailOutput.gantt[activeDetailOutput.gantt.length - 1]?.endTime || 0
-                  }
+                  totalTime={totalSimTime}
                   algorithmName={activeDetailOutput.algorithmName}
+                  currentTime={playbackTime}
+                  onTimeChange={setPlaybackTime}
+                  isPlaying={isPlaying}
+                  onTogglePlay={handleTogglePlay}
+                  onReset={handleResetPlayback}
+                  onStepBack={handleStepBack}
+                  onStepForward={handleStepForward}
+                  onJumpEnd={handleJumpEnd}
+                  playbackSpeed={playbackSpeed}
+                  onChangeSpeed={setPlaybackSpeed}
                 />
               </div>
 
@@ -879,7 +946,7 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({
                               <table className="w-full text-left border-collapse text-sm">
                                 <thead className="bg-[#f8fafc] sticky top-0 z-10 border-b border-slate-200/90 text-xs font-semibold text-slate-500">
                                   <tr>
-                                    <th className="py-3 px-4 text-center w-20">ครั้ง</th>
+                                    <th className="py-3 px-4 text-center w-24">ครั้ง</th>
                                     <th className="py-3 px-4 text-center">Process</th>
                                     <th className="py-3 px-4 text-center">เริ่ม</th>
                                     <th className="py-3 px-4 text-center">จบ</th>
@@ -888,28 +955,61 @@ export const SimulatorSection: React.FC<SimulatorSectionProps> = ({
                                   </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100 font-mono text-xs sm:text-sm text-slate-700">
-                                  {executionSlices.map((slice) => (
-                                    <tr key={slice.step} className="hover:bg-slate-50/70 transition-colors">
-                                      <td className="py-3 px-4 text-center font-bold text-slate-900 font-sans">
-                                        {slice.step}
-                                      </td>
-                                      <td className="py-3 px-4 text-center font-semibold text-slate-900 font-sans">
-                                        <span className="inline-flex items-center gap-1.5 justify-center">
-                                          <span
-                                            className="w-2.5 h-2.5 rounded-full inline-block shrink-0"
-                                            style={{ backgroundColor: slice.color }}
-                                          />
-                                          <span>{slice.processId}</span>
-                                        </span>
-                                      </td>
-                                      <td className="py-3 px-4 text-center tabular-nums">{slice.start}</td>
-                                      <td className="py-3 px-4 text-center tabular-nums">{slice.end}</td>
-                                      <td className="py-3 px-4 text-center tabular-nums">{slice.usedCpu}</td>
-                                      <td className="py-3 px-4 text-center tabular-nums font-bold text-slate-900">
-                                        {slice.remaining}
-                                      </td>
-                                    </tr>
-                                  ))}
+                                  {executionSlices.map((slice) => {
+                                    const isSliceActive =
+                                      playbackTime >= slice.start && playbackTime < slice.end;
+                                    const isSliceDone = playbackTime >= slice.end;
+
+                                    return (
+                                      <tr
+                                        key={slice.step}
+                                        onClick={() => {
+                                          setIsPlaying(false);
+                                          setPlaybackTime(slice.start);
+                                        }}
+                                        className={`transition-colors cursor-pointer select-none ${
+                                          isSliceActive
+                                            ? 'bg-indigo-50/95 ring-2 ring-inset ring-indigo-400 font-bold'
+                                            : isSliceDone
+                                            ? 'hover:bg-slate-50/70 text-slate-700'
+                                            : 'hover:bg-slate-50/70 text-slate-400 opacity-75'
+                                        }`}
+                                        title={`คลิกเพื่อย้ายเวลาไปยังเริ่มต้นช่วง (${slice.start})`}
+                                      >
+                                        <td className="py-3 px-4 text-center font-bold text-slate-900 font-sans">
+                                          <div className="inline-flex items-center gap-1.5 justify-center">
+                                            <span>{slice.step}</span>
+                                            {isSliceActive && (
+                                              <span className="px-1.5 py-0.5 rounded text-[10px] bg-indigo-600 text-white font-bold shadow-2xs animate-pulse">
+                                                กำลังรัน
+                                              </span>
+                                            )}
+                                          </div>
+                                        </td>
+                                        <td className="py-3 px-4 text-center font-semibold text-slate-900 font-sans">
+                                          <span className="inline-flex items-center gap-1.5 justify-center">
+                                            <span
+                                              className="w-2.5 h-2.5 rounded-full inline-block shrink-0"
+                                              style={{ backgroundColor: slice.color }}
+                                            />
+                                            <span className={isSliceActive ? 'text-indigo-900 font-bold' : ''}>
+                                              {slice.processId}
+                                            </span>
+                                          </span>
+                                        </td>
+                                        <td className={`py-3 px-4 text-center tabular-nums ${isSliceActive ? 'text-indigo-700 font-bold' : ''}`}>
+                                          {slice.start}
+                                        </td>
+                                        <td className={`py-3 px-4 text-center tabular-nums ${isSliceActive ? 'text-indigo-700 font-bold' : ''}`}>
+                                          {slice.end}
+                                        </td>
+                                        <td className="py-3 px-4 text-center tabular-nums">{slice.usedCpu}</td>
+                                        <td className={`py-3 px-4 text-center tabular-nums font-bold ${isSliceActive ? 'text-indigo-700 font-extrabold' : 'text-slate-900'}`}>
+                                          {slice.remaining}
+                                        </td>
+                                      </tr>
+                                    );
+                                  })}
                                 </tbody>
                               </table>
                             </div>

@@ -1,6 +1,6 @@
 {
-  "summary":  "Implementation plan for adding the Project Documentation & User Manual tab ('คู่มือ') to the top navigation, featuring rich rendered documentation with Raw Markdown toggle, live search, section jump navigation, copy-to-clipboard, and direct README.md file download.",
-  "updatedAt":  "2026-10-27T04:19:53.319200071Z",
+  "summary":  "แผนการพัฒนาปุ่ม Play และแถบควบคุมการจำลอง CPU Scheduling แบบอินเทอร์แอคทีฟ (Interactive Stepper & Timeline Scrubber) ในส่วนที่ 1 เหนือผังแกนต์ชาร์ต พร้อมตัวควบคุมความเร็ว 0.5x, 1x, 2x และการซิงค์ไฮไลต์ตาราง Execution Slices",
+  "updatedAt":  "2026-10-27T08:49:41.061386008Z",
   "requestFeedback":  true,
   "userFacing":  true
 }
