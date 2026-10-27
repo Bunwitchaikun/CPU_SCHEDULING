@@ -49,7 +49,7 @@ export const TopNav: React.FC<TopNavProps> = ({
               }`}
             >
               <Cpu className="w-3.5 h-3.5 shrink-0" />
-              <span>ห้องทดลองจำลอง</span>
+              <span>การนำเสนอ</span>
             </button>
             <button
               type="button"
